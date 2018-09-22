@@ -8,9 +8,7 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "test": "eslint src test && mocha --compilers babel-register",
-    "prepublish": "npm run -s build",
-    "release": "npm run -s build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "test": "eslint src test && mocha --compilers babel-register"
   },
   "authors": [
     "Jason Miller <jason@developit.ca>"
@@ -35,29 +33,19 @@
     "babel-preset-latest": "^6.22.0",
     "babel-register": "^6.23.0",
     "chai": "^3.5.0",
-    "eslint": "^3.16.1",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "microbundle": "^0.4.4",
     "mocha": "^5.1.1"
   },
   "eslintConfig": {
-    "extends": "eslint:recommended",
-    "parserOptions": {
-      "sourceType": "module"
-    },
+    "extends": "standard",
     "env": {
-      "browser": true,
-      "mocha": true,
-      "node": true,
-      "es6": true
-    },
-    "globals": {
-      "expect": true
-    },
-    "rules": {
-      "no-console": 1,
-      "no-cond-assign": 0,
-      "no-regex-spaces": 0,
-      "semi": [2, "always"]
+      "mocha": true
     }
   }
 }
