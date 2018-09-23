@@ -54,13 +54,13 @@ describe('snarkdown()', () => {
     })
 
     it('parses images', () => {
-      expect(snarkdown('![title](foo.png)')).to.equal('<img src="foo.png" alt="title">')
-      expect(snarkdown('![](foo.png)')).to.equal('<img src="foo.png" alt="">')
+      expect(snarkdown('![title](foo.png)')).to.equal('<img src="foo.png" alt="title" />')
+      expect(snarkdown('![](foo.png)')).to.equal('<img src="foo.png" alt="" />')
     })
 
     it('parses images within links', () => {
-      expect(snarkdown('[![](toc.png)](#toc)')).to.equal('<a href="#toc"><img src="toc.png" alt=""></a>')
-      expect(snarkdown('[![a](a.png)](#a) [![b](b.png)](#b)')).to.equal('<a href="#a"><img src="a.png" alt="a"></a> <a href="#b"><img src="b.png" alt="b"></a>')
+      expect(snarkdown('[![](toc.png)](#toc)')).to.equal('<a href="#toc"><img src="toc.png" alt="" /></a>')
+      expect(snarkdown('[![a](a.png)](#a) [![b](b.png)](#b)')).to.equal('<a href="#a"><img src="a.png" alt="a" /></a> <a href="#b"><img src="b.png" alt="b" /></a>')
     })
 
     it('parses reference links', () => {

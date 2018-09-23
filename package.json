@@ -8,7 +8,7 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "test": "eslint src test && mocha --compilers babel-register"
+    "test": "eslint src test; mocha --compilers babel-register"
   },
   "authors": [
     "Jason Miller <jason@developit.ca>"
